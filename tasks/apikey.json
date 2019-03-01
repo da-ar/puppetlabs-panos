@@ -3,16 +3,8 @@
   "supports_noop": false,
   "description": "Retrieve a PAN-OS apikey using PAN-OS host, username and password.",
   "parameters": {
-    "host": {
-      "description": "The host to connect to",
-      "type": "String"
-    },
-    "user": {
-      "description": "The user name",
-      "type": "String"
-    },
-    "password": {
-      "description": "The password",
+    "credentials_file": {
+      "description": "The filename of the credentials file (as referenced in device.conf)",
       "type": "String"
     }
   }

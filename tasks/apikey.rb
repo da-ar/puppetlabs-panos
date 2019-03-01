@@ -20,7 +20,8 @@ require 'json'
 require 'puppet/resource_api/transport/wrapper'
 
 params = JSON.parse(ENV['PARAMS'] || STDIN.read)
-wrapper = Puppet::ResourceApi::Transport::Wrapper.new('panos', params['credentials_file'])
-transport = wrapper.transport
 
-puts JSON.generate(apikey: transport.apikey)
+wrapper = Puppet::ResourceApi::Transport::Wrapper.new('panos', params['credentials_file'])
+api = Puppet::Transport::Panos::API.new(wrapper.transport.instance_variable_get(:@connection_info))
+
+puts JSON.generate(apikey: api.apikey)
