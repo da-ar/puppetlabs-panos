@@ -7,7 +7,7 @@ This transport connects to Palo Alto Firewalls using their HTTP XML API.
 EOS
   features: [],
   connection_info: {
-    address: {
+    host: {
       type: 'String',
       desc: 'The FQDN or IP address of the firewall to connect to.',
     },
@@ -15,7 +15,7 @@ EOS
       type: 'Optional[Integer]',
       desc: 'The port of the firewall to connect to.',
     },
-    username: {
+    user: {
       type: 'Optional[String]',
       desc: 'The username to use for authenticating all connections to the firewall. Only one of `username`/`password` or `apikey` can be specified.',
     },
